@@ -33,11 +33,11 @@ const eqObjects = function(object1, object2) {
  // I have to use better names it was too hard to compare to make sure for future reference
 const ab = { a: "1", b: "2", c:"5"};
 const ba = { b: "3", a: "2"};
-const bc = {a:"1", b: "2}"};
-const bb = {a:"1", b: "2}"};
+const equalKeyValue1 = {a:"1", b: "2}"};
+const equalKeyValue2 = {a:"1", b: "2}"};
 const abc = {a: "1", b: "3", c: "3"};
 const diffOrderbb = {a:"2", b: "1"};
-console.log(`unequal values meant to fail 1`,eqObjects(ab, ba));
-console.log(`equal values`, (eqObjects(bc,bb)));
-console.log(`unequal values meant to fail 2`, eqObjects(bb, abc));
-console.log(`different ordered values:`,eqObjects(bb, diffOrderbb))
+console.log(`unequal values meant to fail 1: `,eqObjects(ab, ba));
+console.log(`equal values`, (eqObjects(equalKeyValue1,equalKeyValue2)));
+console.log(`unequal values meant to fail 2`, eqObjects(equalKeyValue2, abc));
+console.log(`different ordered values:`,eqObjects(equalKeyValue2, diffOrderbb))
